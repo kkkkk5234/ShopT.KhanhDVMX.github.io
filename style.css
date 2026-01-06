@@ -2,24 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  background: #050b1a;
-  color: #eaeaff;
+  background: radial-gradient(circle at top, #0b1430 0%, #050b1a 60%);
+  color: #e6ebff;
+  line-height: 1.6;
 }
 
 .header {
-  background: #050b1a;
-  border-bottom: 1px solid #0e1b3d;
+  position: sticky;
+  top: 0;
+  background: rgba(5, 11, 26, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(80, 120, 255, 0.15);
+  z-index: 10;
 }
 
 .nav {
-  padding: 20px;
+  padding: 18px;
   text-align: center;
   font-size: 18px;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 section {
@@ -28,41 +33,80 @@ section {
   padding: 0 20px;
 }
 
+/* FORM BOX – dùng chung cho mọi khối */
+.intro,
+.trust,
+.contact,
+.products {
+  background: rgba(15, 25, 60, 0.35);
+  border: 1px solid rgba(120, 160, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
 .intro h1 {
   font-size: 28px;
   margin-bottom: 10px;
 }
 
+.intro p {
+  opacity: 0.85;
+}
+
 .trust {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
 }
 
 .trust-box {
-  border: 1px solid #0e1b3d;
-  padding: 20px;
+  background: rgba(10, 18, 45, 0.55);
+  border: 1px solid rgba(120, 160, 255, 0.15);
+  border-radius: 16px;
+  padding: 18px;
   text-align: center;
 }
 
 .contact h2,
 .products h2 {
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  font-size: 20px;
 }
 
+.contact p {
+  margin-bottom: 6px;
+}
+
+/* TABLE STYLE */
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 32px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(10, 18, 45, 0.45);
+  border: 1px solid rgba(120, 160, 255, 0.15);
+}
+
+table th {
+  background: rgba(20, 35, 90, 0.8);
+  font-weight: 500;
 }
 
 table th,
 table td {
-  border: 1px solid #0e1b3d;
-  padding: 12px;
+  padding: 12px 14px;
   text-align: left;
+  border-bottom: 1px solid rgba(120, 160, 255, 0.12);
 }
 
+table tr:last-child td {
+  border-bottom: none;
+}
+
+/* SCROLL EFFECT */
 .hidden {
   opacity: 0;
   transform: translateY(40px);
@@ -81,5 +125,11 @@ table td {
 }
 
 @media (max-width: 600px) {
-  .intro h1 { font-size: 22px; }
+  section {
+    margin: 50px auto;
+  }
+
+  .intro h1 {
+    font-size: 22px;
+  }
 }
